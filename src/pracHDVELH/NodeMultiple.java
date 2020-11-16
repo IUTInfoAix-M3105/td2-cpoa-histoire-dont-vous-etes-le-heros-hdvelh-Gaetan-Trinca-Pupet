@@ -21,7 +21,7 @@ public class NodeMultiple {
 	/* Overridden methods */
 	@Override
 	public String toString() {
-		/* TO BE COMPLETED */
+		return data.toString()
 	}
 
 	/* Getters/Setters */
@@ -34,7 +34,7 @@ public class NodeMultiple {
 	 * @return the {@code i}th daughter node, or {@code null} if it does not exist.
 	 */
 	public NodeMultiple getDaughter(int i) {
-		if(i < NODE_MAX_ARITY) return daughters[i];
+		if(i < NODE_MAX_ARITY || i >=0) return daughters[i];
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class NodeMultiple {
 	 * @param i        the daughter node's index
 	 */
 	public void setDaughter(NodeMultiple daughter, int i){
-		if (i >= NODE_MAX_ARITY)
+		if (i >= NODE_MAX_ARITY || i < 0)
 			return;
 		daughters[i] = daughter;
 	}
@@ -69,7 +69,7 @@ public class NodeMultiple {
 	 * @param daughters the daughters to set
 	 */
 	public void setDaughters(NodeMultiple[] daughters) {
-		this->daughters = daughters;
+		this.daughters = daughters;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class NodeMultiple {
 	 * @param data
 	 */
 	public void setData(Object data) {
-		this->data = data;
+		this.data = data;
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class NodeMultiple {
 	 * @param data
 	 */
 	public NodeMultiple(Object data) {
-		this->data = data;
+		this.data = data;
 }
 
 // eof
